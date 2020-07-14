@@ -29,6 +29,7 @@ with open(budget_csv, 'r') as csvfile:
     for r in range(len(profit_loss)-1):
             diff_from_prior_month.append(profit_loss[r+1]-profit_loss[r])
     # assign the max increase difference to a variable 
+    
     max_iv = max(diff_from_prior_month)
     # assign the max decrease difference to a variable 
     max_dv = min(diff_from_prior_month)
@@ -41,8 +42,8 @@ print("-----------------------")
 print(f"Total Months: {(len(date))}")
 print(f"Total: ${(sum(profit_loss))}")
 print(f"Average Change: ${(round(float(sum(diff_from_prior_month)/(len(date)-1)),2))}")
-print(f"Greatest Increase in Profits: {max_iv_month} ${max_iv}")
-print(f"Greatest Decrease in Profits: {max_dv_month} ${max_dv}")
+print(f"Greatest Increase in Profits: {max_iv_month} (${max_iv})")
+print(f"Greatest Decrease in Profits: {max_dv_month} (${max_dv})")
 
 #  Open the output file
 with open(output_file, "w") as analysis:
@@ -51,5 +52,5 @@ with open(output_file, "w") as analysis:
     analysis.write(f"Total Months: {(len(date))}\n")
     analysis.write(f"Total: ${(sum(profit_loss))}\n")
     analysis.write(f"Average Change: ${(round(float(sum(diff_from_prior_month)/(len(date)-1)),2))}\n")
-    analysis.write(f"Greatest Increase in Profits: {max_iv_month} ${max_iv}\n")
-    analysis.write(f"Greatest Decrease in Profits: {max_dv_month} ${max_dv}\n")
+    analysis.write(f"Greatest Increase in Profits: {max_iv_month} (${max_iv})\n")
+    analysis.write(f"Greatest Decrease in Profits: {max_dv_month} (${max_dv})\n")

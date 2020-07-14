@@ -35,7 +35,7 @@ print(f"Total Votes: {total_count}")
 print("-------------------------")
 # Prints the nicely formatted dictionary
 for key,value in candidate_count.items():
-    print(f"{key}: {(round(float(value/total_count),2)*100)}% ({value})")
+    print(f"{key}: {round((float(value/total_count)*100),2)}% ({value})")
 print("-------------------------")
 print(f"Winner: {winner}")
 print("-------------------------")
@@ -50,7 +50,7 @@ with open(output_file, "w") as analysis:
     analysis.write("-------------------------\n")
     # Prints the nicely formatted dictionary
     for key,value in candidate_count.items():
-        analysis.write(f"{key}: {(round(float((value)/(total_count)),2))*100}% ({value})\n")
+        analysis.write(f"{key}: {round((float(value/total_count)*100),2)}% ({value})\n")
     analysis.write("-------------------------\n")
     analysis.write(f"Winner: {winner}\n")
     analysis.write("-------------------------\n")
